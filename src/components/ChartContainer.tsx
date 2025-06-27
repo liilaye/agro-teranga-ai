@@ -14,10 +14,10 @@ const ChartContainer: React.FC<ChartContainerProps> = ({
   title,
   type,
   data,
-  color = '#10B981',
+  color = '#1D3C34',
   height = 300
 }) => {
-  const COLORS = ['#10B981', '#3B82F6', '#F59E0B', '#EF4444', '#8B5CF6'];
+  const COLORS = ['#1D3C34', '#2d5a4f', '#3f7869', '#519584', '#63b39e'];
 
   const renderChart = () => {
     switch (type) {
@@ -97,8 +97,8 @@ const ChartContainer: React.FC<ChartContainerProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-      <h3 className="text-lg font-semibold text-gray-800 mb-4">{title}</h3>
+    <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+      <h3 className="text-lg font-semibold text-[#1D3C34] mb-4">{title}</h3>
       {renderChart()}
     </div>
   );

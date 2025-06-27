@@ -25,10 +25,10 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-gradient-to-b from-green-800 to-green-900 text-white w-64 min-h-screen p-4 shadow-2xl">
+    <nav className="bg-gradient-to-b from-[#1D3C34] to-[#0f2420] text-white w-64 min-h-screen p-4 shadow-2xl">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-green-100 mb-2">🌾 Pulsar Agro</h1>
-        <p className="text-green-300 text-sm">Dashboard Agricole</p>
+        <h1 className="text-2xl font-bold text-white mb-2">🌾 Agro Teranga AI</h1>
+        <p className="text-gray-200 text-sm">Dashboard Agricole</p>
       </div>
       
       <ul className="space-y-2">
@@ -39,8 +39,8 @@ const Navigation = () => {
               className={({ isActive }) =>
                 `flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 ${
                   isActive
-                    ? 'bg-green-700 text-white shadow-lg transform scale-105'
-                    : 'text-green-100 hover:bg-green-700/50 hover:text-white'
+                    ? 'bg-white/20 text-white shadow-lg transform scale-105'
+                    : 'text-gray-200 hover:bg-white/10 hover:text-white'
                 }`
               }
             >
@@ -52,8 +52,8 @@ const Navigation = () => {
       </ul>
       
       <div className="mt-auto pt-8">
-        <div className="bg-green-700/30 p-4 rounded-lg">
-          <p className="text-green-200 text-sm mb-2">Météo Actuelle</p>
+        <div className="bg-white/10 p-4 rounded-lg">
+          <p className="text-gray-200 text-sm mb-2">Météo Actuelle</p>
           <div className="flex items-center space-x-2">
             <span className="text-xl">☀️</span>
             <span className="text-white font-semibold">24°C</span>

@@ -37,10 +37,10 @@ const Analytics = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-green-50/30 p-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">Analytics Avancées</h1>
+          <h1 className="text-3xl font-bold text-[#1D3C34] mb-2">Analytics Avancées</h1>
           <p className="text-gray-600">Analyse détaillée des performances agricoles</p>
         </div>
 
@@ -89,14 +89,14 @@ const Analytics = () => {
             title="Rendement Mensuel (tonnes)"
             type="bar"
             data={monthlyYieldData}
-            color="#10B981"
+            color="#1D3C34"
             height={400}
           />
           <ChartContainer
             title="Performance par Culture (%)"
             type="bar"
             data={cropPerformanceData}
-            color="#3B82F6"
+            color="#1D3C34"
             height={400}
           />
         </div>
@@ -109,12 +109,12 @@ const Analytics = () => {
             height={400}
           />
           
-          <div className="bg-white rounded-xl shadow-lg p-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">Résumé Analytique</h3>
+          <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+            <h3 className="text-lg font-semibold text-[#1D3C34] mb-4">Résumé Analytique</h3>
             <div className="space-y-4">
-              <div className="p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
-                <h4 className="font-medium text-green-800 mb-2">Performances Excellentes</h4>
-                <p className="text-sm text-green-700">Le rendement global a augmenté de 12% par rapport à l'année précédente.</p>
+              <div className="p-4 bg-green-50 rounded-lg border-l-4 border-[#1D3C34]">
+                <h4 className="font-medium text-[#1D3C34] mb-2">Performances Excellentes</h4>
+                <p className="text-sm text-gray-700">Le rendement global a augmenté de 12% par rapport à l'année précédente.</p>
               </div>
               <div className="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
                 <h4 className="font-medium text-blue-800 mb-2">Optimisation Possible</h4>

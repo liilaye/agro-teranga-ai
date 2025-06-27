@@ -59,10 +59,10 @@ const FieldMap = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'healthy': return 'text-green-600 bg-green-100';
-      case 'warning': return 'text-yellow-600 bg-yellow-100';
-      case 'critical': return 'text-red-600 bg-red-100';
-      default: return 'text-gray-600 bg-gray-100';
+      case 'healthy': return 'text-[#1D3C34] bg-green-50 border-[#1D3C34]';
+      case 'warning': return 'text-yellow-600 bg-yellow-50 border-yellow-600';
+      case 'critical': return 'text-red-600 bg-red-50 border-red-600';
+      default: return 'text-gray-600 bg-gray-50 border-gray-600';
     }
   };
 
@@ -76,22 +76,22 @@ const FieldMap = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6">
-      <h3 className="text-lg font-semibold text-gray-800 mb-6">Vue d'ensemble des parcelles</h3>
+    <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+      <h3 className="text-lg font-semibold text-[#1D3C34] mb-6">Vue d'ensemble des parcelles</h3>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {fields.map((field) => (
           <div 
             key={field.id}
-            className="border rounded-lg p-4 hover:shadow-md transition-shadow duration-200 cursor-pointer"
+            className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-200 cursor-pointer hover:border-[#1D3C34]"
           >
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center space-x-2">
-                <MapPin className="text-green-600" size={16} />
-                <h4 className="font-medium text-gray-800">{field.name}</h4>
+                <MapPin className="text-[#1D3C34]" size={16} />
+                <h4 className="font-medium text-[#1D3C34]">{field.name}</h4>
               </div>
               <span 
-                className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(field.status)}`}
+                className={`px-2 py-1 rounded-full text-xs font-medium border ${getStatusColor(field.status)}`}
               >
                 {getStatusLabel(field.status)}
               </span>
