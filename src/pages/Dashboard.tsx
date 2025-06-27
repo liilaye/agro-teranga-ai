@@ -1,10 +1,10 @@
-
 import React from 'react';
 import MetricCard from '../components/MetricCard';
 import ChartContainer from '../components/ChartContainer';
 import FieldMap from '../components/FieldMap';
 import AlertPanel from '../components/AlertPanel';
 import SoilSensorPanel from '../components/SoilSensorPanel';
+import IrrigationPanel from '../components/IrrigationPanel';
 import { 
   Thermometer, 
   Droplets, 
@@ -66,6 +66,11 @@ const Dashboard = () => {
         {/* Capteurs de sol et données satellite */}
         <div className="mb-8">
           <SoilSensorPanel />
+        </div>
+
+        {/* Système d'irrigation et recommandations IA */}
+        <div className="mb-8">
+          <IrrigationPanel />
         </div>
 
         {/* Métriques principales */}
