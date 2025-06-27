@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { 
   Home, 
   Droplets,
-  Sensors,
+  Activity,
   MapPin, 
   AlertTriangle
 } from 'lucide-react';
@@ -12,7 +11,7 @@ import {
 const Navigation = () => {
   const navItems = [
     { to: '/', icon: Home, label: 'Dashboard' },
-    { to: '#soil-sensors', icon: Sensors, label: 'Capteurs Sol' },
+    { to: '#soil-sensors', icon: Activity, label: 'Capteurs Sol' },
     { to: '#irrigation', icon: Droplets, label: 'Irrigation' },
     { to: '#fields', icon: MapPin, label: 'Parcelles' },
     { to: '#alerts', icon: AlertTriangle, label: 'Alertes' }
