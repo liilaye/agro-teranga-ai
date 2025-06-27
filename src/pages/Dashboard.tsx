@@ -1,50 +1,18 @@
+
 import React from 'react';
-import MetricCard from '../components/MetricCard';
 import ChartContainer from '../components/ChartContainer';
 import FieldMap from '../components/FieldMap';
 import AlertPanel from '../components/AlertPanel';
 import SoilSensorPanel from '../components/SoilSensorPanel';
 import IrrigationPanel from '../components/IrrigationPanel';
 import { 
-  Thermometer, 
-  Droplets, 
-  Wind, 
-  Sun, 
-  Sprout, 
   TrendingUp,
   MapPin,
-  Calendar
+  Sprout
 } from 'lucide-react';
+import MetricCard from '../components/MetricCard';
 
 const Dashboard = () => {
-  // Données pour les graphiques
-  const temperatureData = [
-    { name: '00h', value: 18 },
-    { name: '04h', value: 16 },
-    { name: '08h', value: 20 },
-    { name: '12h', value: 25 },
-    { name: '16h', value: 28 },
-    { name: '20h', value: 24 }
-  ];
-
-  const humidityData = [
-    { name: 'Lun', value: 65 },
-    { name: 'Mar', value: 72 },
-    { name: 'Mer', value: 58 },
-    { name: 'Jeu', value: 45 },
-    { name: 'Ven', value: 52 },
-    { name: 'Sam', value: 68 },
-    { name: 'Dim', value: 75 }
-  ];
-
-  const cropData = [
-    { name: 'Blé', value: 35 },
-    { name: 'Maïs', value: 25 },
-    { name: 'Tournesol', value: 20 },
-    { name: 'Colza', value: 15 },
-    { name: 'Autres', value: 5 }
-  ];
-
   const yieldData = [
     { name: 'Jan', value: 2.1 },
     { name: 'Fév', value: 2.3 },
@@ -73,77 +41,13 @@ const Dashboard = () => {
           <IrrigationPanel />
         </div>
 
-        {/* Métriques principales */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <MetricCard
-            title="Température Moyenne"
-            value={24}
-            unit="°C"
-            icon={Thermometer}
-            trend="up"
-            trendValue="+2°C"
-            color="red"
-          />
-          <MetricCard
-            title="Humidité du Sol"
-            value={68}
-            unit="%"
-            icon={Droplets}
-            trend="down"
-            trendValue="-5%"
-            color="blue"
-          />
-          <MetricCard
-            title="Vitesse du Vent"
-            value={12}
-            unit="km/h"
-            icon={Wind}
-            trend="stable"
-            trendValue="0 km/h"
-            color="green"
-          />
-          <MetricCard
-            title="Index UV"
-            value={7}
-            unit="/10"
-            icon={Sun}
-            trend="up"
-            trendValue="+1"
-            color="yellow"
-          />
-        </div>
-
-        {/* Graphiques principaux */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          <ChartContainer
-            title="Évolution de la Température (24h)"
-            type="line"
-            data={temperatureData}
-            color="#EF4444"
-            height={300}
-          />
-          <ChartContainer
-            title="Humidité Hebdomadaire"
-            type="bar"
-            data={humidityData}
-            color="#3B82F6"
-            height={300}
-          />
-        </div>
-
         {/* Section des parcelles */}
         <div className="mb-8">
           <FieldMap />
         </div>
 
-        {/* Analyse des cultures et alertes */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          <ChartContainer
-            title="Répartition des Cultures"
-            type="pie"
-            data={cropData}
-            height={350}
-          />
+        {/* Alertes */}
+        <div className="mb-8">
           <AlertPanel />
         </div>
 
