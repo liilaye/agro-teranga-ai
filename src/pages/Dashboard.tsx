@@ -4,6 +4,7 @@ import MetricCard from '../components/MetricCard';
 import ChartContainer from '../components/ChartContainer';
 import FieldMap from '../components/FieldMap';
 import AlertPanel from '../components/AlertPanel';
+import SoilSensorPanel from '../components/SoilSensorPanel';
 import { 
   Thermometer, 
   Droplets, 
@@ -60,6 +61,11 @@ const Dashboard = () => {
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">Dashboard Agricole</h1>
           <p className="text-gray-600">Vue d'ensemble de vos exploitations - {new Date().toLocaleDateString('fr-FR')}</p>
+        </div>
+
+        {/* Capteurs de sol et données satellite */}
+        <div className="mb-8">
+          <SoilSensorPanel />
         </div>
 
         {/* Métriques principales */}

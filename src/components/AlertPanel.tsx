@@ -85,7 +85,7 @@ const AlertPanel = () => {
                   <span className="text-xs text-gray-500">{alert.timestamp}</span>
                 </div>
                 <p className="text-sm text-gray-600 mb-1">{alert.message}</p>
-                <p className="text-xs text-gray-500">📍 {alert.field}</p>
+                <p className="text-xs text-gray-500">{alert.field}</p>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@ const AlertPanel = () => {
       
       <div className="mt-4 text-center">
         <button className="text-[#1D3C34] hover:text-[#0f2420] text-sm font-medium transition-colors duration-200">
-          Voir toutes les alertes →
+          Voir toutes les alertes
         </button>
       </div>
     </div>
