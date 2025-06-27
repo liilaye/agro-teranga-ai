@@ -1,14 +1,20 @@
+
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { 
   Home, 
   Droplets,
   Activity,
   MapPin, 
-  AlertTriangle
+  AlertTriangle,
+  LogOut
 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 
 const Navigation = () => {
+  const navigate = useNavigate();
+  
   const navItems = [
     { to: '/', icon: Home, label: 'Dashboard' },
     { to: '#soil-sensors', icon: Activity, label: 'Capteurs Sol' },
@@ -16,6 +22,12 @@ const Navigation = () => {
     { to: '#fields', icon: MapPin, label: 'Parcelles' },
     { to: '#alerts', icon: AlertTriangle, label: 'Alertes' }
   ];
+
+  const handleLogout = () => {
+    localStorage.removeItem('isAuthenticated');
+    toast.success('Déconnexion réussie');
+    navigate('/login');
+  };
 
   return (
     <nav className="bg-gradient-to-b from-[#1D3C34] to-[#0f2420] text-white w-64 min-h-screen p-4 shadow-2xl">
@@ -45,12 +57,21 @@ const Navigation = () => {
       </ul>
       
       <div className="mt-auto pt-8">
-        <div className="bg-white/10 p-4 rounded-lg">
+        <div className="bg-white/10 p-4 rounded-lg mb-4">
           <p className="text-gray-200 text-sm mb-2">Météo Actuelle</p>
           <div className="flex items-center space-x-2">
             <span className="text-white font-semibold">24°C</span>
           </div>
         </div>
+        
+        <Button
+          onClick={handleLogout}
+          variant="outline"
+          className="w-full bg-transparent border-white/20 text-white hover:bg-white/10"
+        >
+          <LogOut size={16} className="mr-2" />
+          Déconnexion
+        </Button>
       </div>
     </nav>
   );
