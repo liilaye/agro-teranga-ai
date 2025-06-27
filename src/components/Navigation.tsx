@@ -3,25 +3,19 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { 
   Home, 
-  BarChart3, 
+  Droplets,
+  Sensors,
   MapPin, 
-  Sprout, 
-  AlertTriangle,
-  Settings,
-  Users,
-  Calendar
+  AlertTriangle
 } from 'lucide-react';
 
 const Navigation = () => {
   const navItems = [
     { to: '/', icon: Home, label: 'Dashboard' },
-    { to: '/analytics', icon: BarChart3, label: 'Analytics' },
-    { to: '/fields', icon: MapPin, label: 'Parcelles' },
-    { to: '/crops', icon: Sprout, label: 'Cultures' },
-    { to: '/alerts', icon: AlertTriangle, label: 'Alertes' },
-    { to: '/planning', icon: Calendar, label: 'Planning' },
-    { to: '/team', icon: Users, label: 'Équipe' },
-    { to: '/settings', icon: Settings, label: 'Paramètres' },
+    { to: '#soil-sensors', icon: Sensors, label: 'Capteurs Sol' },
+    { to: '#irrigation', icon: Droplets, label: 'Irrigation' },
+    { to: '#fields', icon: MapPin, label: 'Parcelles' },
+    { to: '#alerts', icon: AlertTriangle, label: 'Alertes' }
   ];
 
   return (
