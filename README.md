@@ -1,73 +1,66 @@
-# Welcome to your Lovable project
+# 🌾 AgroTeranga AI – Precision Irrigation Platform
 
-## Project info
+**AgroTeranga AI** is a smart irrigation system designed for smallholder farmers in Senegal. It leverages **IoT sensors**, **satellite data (EO)**, **weather APIs**, and **machine learning** to optimize water usage, increase crop yields, and promote sustainable agriculture.
 
-**URL**: https://lovable.dev/projects/5ed5f6f1-f2ab-4191-a53f-5c965d84d32a
+---
 
-## How can I edit this code?
+## 🚀 Overview
 
-There are several ways of editing your application.
+AgroTeranga AI provides **personalized irrigation recommendations** by combining:
 
-**Use Lovable**
+- 🌡️ **Soil sensors** for moisture, temperature, and evapotranspiration.
+- 🛰️ **Sentinel-2 satellite data** (NDVI, CWSI) via Earth Observation APIs.
+- 🌦️ **OpenWeather API** for real-time climate data.
+- 🧠 A **pre-trained ML model** (XGBoost or Random Forest) for water volume and duration prediction.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5ed5f6f1-f2ab-4191-a53f-5c965d84d32a) and start prompting.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🔧 Architecture
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🗂️ Project Structure
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🌐 APIs Used
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- [Copernicus Sentinel-2](https://sentinels.copernicus.eu/) – NDVI, CWSI via EO API.
+- [OpenWeatherMap](https://openweathermap.org/api) – Temperature, humidity, wind.
+- [CHIRPS](https://data.chc.ucsb.edu/products/CHIRPS-2.0/) – Rainfall data.
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📊 Machine Learning Model
 
-**Use GitHub Codespaces**
+- **Type**: Supervised regression
+- **Model**: Random Forest / XGBoost
+- **Inputs**: Soil moisture, NDVI, CWSI, temp, rainfall, crop type
+- **Outputs**:
+  - Recommended water volume (L)
+  - Irrigation duration (minutes)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 📱 Interface Features
 
-This project is built with:
+- Multilingual support (French, Wolof)
+- Offline-friendly with local caching
+- Visual dashboard: stress maps, forecasted irrigation
+- Alert system for critical drought risk
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🛠️ How to Run (Local)
 
-Simply open [Lovable](https://lovable.dev/projects/5ed5f6f1-f2ab-4191-a53f-5c965d84d32a) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1. **Backend**
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+cd frontend/vue-client
+npm install
+npm run serve
